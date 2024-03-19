@@ -1,0 +1,44 @@
+[package]
+name = "bevy2d_template"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[dependencies]
+bevy = { version = "0.13", default-features = false, features = [
+    "android_shared_stdcxx",
+    "animation",
+    "bevy_animation",
+    "bevy_asset",
+    "bevy_audio",
+    "bevy_core_pipeline",
+    "bevy_debug_stepping",
+    "bevy_gilrs",
+    "bevy_gizmos",
+    "bevy_render",
+    "bevy_scene",
+    "bevy_sprite",
+    "bevy_text",
+    "bevy_ui",
+    "bevy_winit",
+    "default_font",
+    "ktx2",
+    "multi-threaded",
+    "png",
+    "tonemapping_luts",
+    "vorbis",
+    "x11",
+    "wayland",
+    "zstd",
+    ]}
+
+[features]
+default = ["dev"]
+dev = ["bevy/dynamic_linking", "bevy/file_watcher"]
